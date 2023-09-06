@@ -1,0 +1,9 @@
+<h4>{{this.fieldlabel}}</h4>
+<div class="bs-input" [ngClass]="{'has-error': isFieldInvalid()}">
+    <mat-form-field>
+        <mat-label>{{this.fieldlabel}}</mat-label>
+        <input matInput [placeholder]="placeholder" [(ngModel)]="value">
+    </mat-form-field>
+</div>
+
+<error-message [control]="formControl" [fieldlabel]="fieldlabel"></error-message>

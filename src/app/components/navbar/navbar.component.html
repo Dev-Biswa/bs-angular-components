@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ng-container *ngFor="let item of navMenuItems">
+            <li class="nav-item" *ngIf="!item.submenu">
+                <a class="nav-link" [routerLink]="item.link" [routerLinkActive]="'active'" [routerLinkActiveOptions]={exact:true}>
+                  {{item.title}}
+                </a>
+            </li>
+            <li class="nav-item dropdown" *ngIf="item.submenu">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{item.title}}
+                </a>
+                <ul class="dropdown-menu">
+                    <ng-container *ngFor="let submenu of item.submenu">
+                        <li>
+                          <a class="dropdown-item" [routerLink]="submenu.link" [routerLinkActive]="'active'" [routerLinkActiveOptions]={exact:true}>
+                            {{submenu.title}}
+                          </a>
+                        </li>
+                    </ng-container>
+                </ul>
+            </li>
+          </ng-container>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

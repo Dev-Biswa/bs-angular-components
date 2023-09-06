@@ -1,0 +1,13 @@
+<h4>{{this.fieldlabel}}</h4>
+<div class="bs-dropdown" [ngClass]="{'has-error': isFieldInvalid()}">
+  <mat-form-field>
+    <mat-label>{{this.fieldlabel}}</mat-label>
+    <mat-select [(ngModel)]="value">
+      <mat-option *ngFor="let option of options" [value]="option.id">
+        {{option.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<error-message [control]="formControl" [fieldlabel]="fieldlabel"></error-message>

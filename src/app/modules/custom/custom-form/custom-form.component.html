@@ -1,0 +1,51 @@
+<div class="custom-form">
+    <div class="custom-form--inner">
+        <h4 class="custom-form--header">Custom Form</h4>
+
+        <form novalidate [formGroup]="customForm">
+            <div class="custom-form--list">
+                <div class="custom-form--row">
+                    <div class="custom-form--col">
+                        <app-form-input 
+                            [placeholder]="'Enter your name'"
+                            formControlName="name" 
+                            [formControl]="$any(customForm).controls['name']" 
+                            [fieldlabel]="'Name'">
+                        </app-form-input>
+                    </div>
+                    <div class="custom-form--col">
+                        <app-form-dropdown 
+                            formControlName="gender" 
+                            [options] = "gender"
+                            [formControl]="$any(customForm).controls['gender']"
+                            [fieldlabel]="'Gender'">
+                        </app-form-dropdown>
+                    </div>
+                </div>
+                <div class="custom-form--row">
+                    <div class="custom-form--col">
+                        <app-form-input 
+                            [placeholder]="'Ex: 9999999999'"
+                            formControlName="phoneNumber" 
+                            [formControl]="$any(customForm).controls['phoneNumber']" 
+                            [fieldlabel]="'Phone number'">
+                        </app-form-input>
+                    </div>
+                    <div class="custom-form--col">
+                        <app-form-input 
+                            [placeholder]="'Ex: abc@example.com'"
+                            formControlName="email" 
+                            [formControl]="$any(customForm).controls['email']" 
+                            [fieldlabel]="'Email'">
+                        </app-form-input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-form--row">
+                <button type="button" mat-raised-button color="primary" (click)="onSave()">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
