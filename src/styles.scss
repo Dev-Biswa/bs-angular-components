@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+$color-validation: red;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.validator-error-message {
+    font-size: 13px;
+    color: $color-validation;
+    font-weight: bold;
+}
+
+.has-error {
+    .mat-mdc-text-field-wrapper {
+        border-width: 1px 1px 0 ;
+        border-style: solid;
+        border-color: $color-validation ;
+    }
+}
