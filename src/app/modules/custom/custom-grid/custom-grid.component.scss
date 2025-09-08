@@ -1,0 +1,14 @@
+.custom-grid {
+    padding: 24px 0;
+    &--inner {
+        padding: 0 24px;
+        max-width: 1464px;
+        margin: 0 auto;
+    }
+    &--header {
+        font-family: 'Roboto';
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+}
